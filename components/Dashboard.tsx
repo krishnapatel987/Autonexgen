@@ -3,7 +3,7 @@ import React from 'react';
 const Dashboard: React.FC = () => {
   return (
     <div className="w-full max-w-[1000px] z-20 mt-16 mx-auto px-4 sm:px-6 lg:px-8 relative [perspective:2000px]">
-      <div className="relative w-full rounded-xl border bg-[#0a0a0c]/80 backdrop-blur-xl overflow-hidden shadow-2xl border-white/10 transition-transform duration-700 [transform:rotateX(15deg)_scale(0.85)] sm:[transform:rotateX(20deg)_scale(0.95)] lg:[transform:rotateX(20deg)_scale(0.98)] hover:[transform:rotateX(5deg)_scale(0.9)] sm:hover:[transform:rotateX(5deg)_scale(1)] lg:hover:[transform:rotateX(5deg)_scale(1.02)]">
+      <div className="relative w-full rounded-xl border bg-[#0a0a0c]/80 backdrop-blur-xl overflow-hidden shadow-2xl border-white/10 transition-transform duration-700 [transform:rotateX(15deg)_scale(0.75)] sm:[transform:rotateX(20deg)_scale(0.85)] lg:[transform:rotateX(20deg)_scale(0.98)] hover:[transform:rotateX(5deg)_scale(0.8)] sm:hover:[transform:rotateX(5deg)_scale(0.9)] lg:hover:[transform:rotateX(5deg)_scale(1.02)]">
         {/* Scanline */}
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-blue-500/5 to-transparent -translate-y-full animate-scan pointer-events-none z-30"></div>
         
@@ -81,7 +81,7 @@ const Dashboard: React.FC = () => {
               <div className="opacity-10 absolute inset-0" style={{backgroundImage: 'radial-gradient(circle, #333 1px, transparent 1px)', backgroundSize: '30px 30px'}}></div>
               
               {/* Node Graph Mockup - Responsive Scaling */}
-              <div className="flex items-center gap-6 sm:gap-12 lg:gap-16 z-10 scale-[0.8] sm:scale-100 lg:scale-[1.02]">
+              <div className="flex items-center gap-6 sm:gap-12 lg:gap-16 z-10 scale-[0.6] sm:scale-[0.8] lg:scale-[1.02]">
                 <div className="bg-[#1c1c1f] border border-white/10 rounded-lg p-3 sm:p-4 w-24 sm:w-32 lg:w-36 shadow-xl animate-in slide-in-from-left duration-1000">
                   <div className="flex items-center gap-2 mb-2">
                     <iconify-icon icon="logos:whatsapp-icon" width="14"></iconify-icon>

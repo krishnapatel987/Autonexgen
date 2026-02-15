@@ -1,10 +1,10 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-import { Review } from '../types';
+import { Review, AppView } from '../types';
 import { supabase } from '../services/supabaseClient';
 
 interface ReviewPageProps {
-  onNavigate: (view: any) => void;
+  onNavigate: (view: AppView) => void;
 }
 
 const Reveal: React.FC<{ children: React.ReactNode, delay?: number, className?: string }> = ({ children, delay = 0, className = "" }) => {

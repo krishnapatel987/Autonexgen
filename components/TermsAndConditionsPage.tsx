@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 
 interface TermsAndConditionsPageProps {
@@ -67,7 +66,11 @@ const TermsAndConditionsPage: React.FC<TermsAndConditionsPageProps> = ({ onNavig
       content: "While we strive for 100% accuracy in our AI agents, Large Language Models (LLMs) are probabilistic by nature. Autonexgen does not guarantee that AI responses will always be correct or error-free and is not responsible for 'hallucinations' or unintended outputs from generative models."
     },
     {
-      title: "7. Governing Law",
+      title: "7. Marketing Representations and Statistical Data",
+      content: "Numerical representations, statistics, ROI claims, and time-saving metrics presented across this website (including but not limited to landing pages and case studies) are for illustrative and marketing purposes. These figures may be based on internal projections, representative pilot studies, or industry benchmarks rather than historical actuals. Individual results will vary based on business complexity and specific implementation parameters. Autonexgen makes no guarantees of specific financial or operational outcomes."
+    },
+    {
+      title: "8. Governing Law",
       content: "These terms shall be governed by and construed in accordance with the laws of India, and any disputes relating to these terms and conditions will be subject to the exclusive jurisdiction of the courts of Ahmedabad, Gujarat."
     }
   ];
@@ -85,7 +88,7 @@ const TermsAndConditionsPage: React.FC<TermsAndConditionsPageProps> = ({ onNavig
               Terms & <span className="italic text-blue-400">Conditions</span>
             </h1>
             <p className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">
-              Last Revised: May 20, 2025 • Version 1.4
+              Last Revised: May 20, 2025 • Version 1.5
             </p>
           </div>
         </Reveal>
@@ -109,7 +112,7 @@ const TermsAndConditionsPage: React.FC<TermsAndConditionsPageProps> = ({ onNavig
 
         {/* Legal Contact */}
         <Reveal delay={600}>
-          <div className="mt-20 p-12 rounded-[2.5rem] border border-white/5 bg-gradient-to-tr from-blue-900/10 to-transparent flex flex-col items-center text-center">
+          <div className="mt-20 p-12 rounded-[2.5rem] border border-white/5 bg-gradient-to-br from-blue-900/10 to-transparent flex flex-col items-center text-center">
             <div className="w-14 h-14 rounded-full bg-blue-500/10 flex items-center justify-center mb-6">
               <iconify-icon icon="lucide:file-text" class="text-blue-400 text-3xl"></iconify-icon>
             </div>
@@ -118,11 +121,11 @@ const TermsAndConditionsPage: React.FC<TermsAndConditionsPageProps> = ({ onNavig
               If you require further clarification regarding our service terms or legal compliance, please reach out to our legal department.
             </p>
             <a 
-              href="mailto:legal@autonexgen.com" 
+              href="mailto:contact@autonexgen.com" 
               className="px-10 py-3.5 bg-white/5 border border-white/10 rounded-full text-white text-sm font-semibold hover:bg-blue-600 hover:border-blue-600 transition-all active:scale-95 inline-flex items-center gap-3"
             >
               <iconify-icon icon="lucide:mail" width="18"></iconify-icon>
-              legal@autonexgen.com
+              contact@autonexgen.com
             </a>
           </div>
         </Reveal>

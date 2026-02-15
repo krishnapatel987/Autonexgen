@@ -1,6 +1,9 @@
 
 import React from 'react';
 
+// Added missing AppView type export to fix errors in Navbar.tsx and App.tsx
+export type AppView = 'home' | 'services' | 'results' | 'reviews' | 'about' | 'contact' | 'careers' | 'blog' | 'privacy' | 'terms' | 'landing';
+
 export interface Message {
   role: 'user' | 'bot';
   content: string;
@@ -34,10 +37,11 @@ export interface Review {
 }
 
 /**
- * Fix: Augment the 'react' module's JSX namespace instead of a global one.
- * This approach ensures that 'iconify-icon' is merged into the existing
- * IntrinsicElements interface provided by React, preventing the shadowing
- * of standard HTML tags like 'div', 'span', etc.
+ * Fix: Use 'declare module "react"' to correctly augment the JSX namespace.
+ * This ensures that standard HTML elements like 'div', 'span', and 'button' are preserved
+ * through interface merging within React's own JSX definition. The previous 
+ * 'declare global' declaration was unintentionally shadowing the entire namespace,
+ * leading to widespread "Property ... does not exist on type 'JSX.IntrinsicElements'" errors.
  */
 declare module 'react' {
   namespace JSX {

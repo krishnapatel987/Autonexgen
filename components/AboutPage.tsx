@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 
 interface AboutPageProps {
@@ -85,22 +84,22 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           </div>
         </Reveal>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-40">
+        {/* Stats Grid - Optimized for Tablet (4 cols like PC) */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-40">
           {stats.map((stat, i) => (
             <Reveal key={i} delay={i * 100}>
-              <div className="p-8 rounded-3xl border border-white/5 bg-white/[0.02] text-center group hover:border-blue-500/20 transition-colors h-full">
-                <div className="text-4xl font-medium font-newsreader text-white mb-2 group-hover:text-blue-400 transition-colors">{stat.value}</div>
-                <div className="text-xs font-mono uppercase tracking-widest text-slate-500">{stat.label}</div>
+              <div className="p-6 md:p-8 rounded-3xl border border-white/5 bg-white/[0.02] text-center group hover:border-blue-500/20 transition-colors h-full">
+                <div className="text-3xl md:text-4xl font-medium font-newsreader text-white mb-2 group-hover:text-blue-400 transition-colors">{stat.value}</div>
+                <div className="text-[10px] font-mono uppercase tracking-widest text-slate-500">{stat.label}</div>
               </div>
             </Reveal>
           ))}
         </div>
 
-        {/* Mission Section */}
+        {/* Mission Section - 2 Columns on Tablet to match PC feel */}
         <Reveal>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-40">
-            <div className="relative aspect-square rounded-[3rem] border border-white/10 bg-[#0a0a0c] overflow-hidden group/mission-img shadow-2xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center mb-40">
+            <div className="relative aspect-square rounded-[2rem] md:rounded-[3rem] border border-white/10 bg-[#0a0a0c] overflow-hidden group/mission-img shadow-2xl">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.15),transparent_70%)] z-10"></div>
               <img 
                 src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000" 
@@ -114,16 +113,16 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             </div>
             
             <div>
-              <h2 className="text-4xl font-medium font-serif text-white mb-8">Our Mission</h2>
-              <p className="text-slate-400 text-lg mb-6 leading-relaxed font-light">
+              <h2 className="text-3xl md:text-4xl font-medium font-serif text-white mb-6 md:mb-8">Our Mission</h2>
+              <p className="text-slate-400 text-base md:text-lg mb-6 leading-relaxed font-light">
                 We believe that AI should be more than just a tool; it should be a partner. Our mission is to democratize access to enterprise-grade automation for businesses of all sizes, from startups in Ahmedabad to multinationals worldwide.
               </p>
-              <p className="text-slate-400 text-lg mb-10 leading-relaxed font-light">
+              <p className="text-slate-400 text-base md:text-lg mb-8 md:mb-10 leading-relaxed font-light">
                 By bridging the gap between cutting-edge Large Language Models and real-world business challenges, we empower organizations to operate at a velocity previously thought impossible.
               </p>
               <div className="flex flex-col gap-4">
                 {['Human-Centric Design', 'API-First Architecture', 'Continuous Optimization'].map(item => (
-                  <div key={item} className="flex items-center gap-3 text-white font-medium">
+                  <div key={item} className="flex items-center gap-3 text-white font-medium text-sm md:text-base">
                     <div className="w-5 h-5 rounded-full bg-blue-500/10 flex items-center justify-center">
                       <iconify-icon icon="lucide:check" class="text-blue-400 text-xs"></iconify-icon>
                     </div>
@@ -135,14 +134,13 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           </div>
         </Reveal>
 
-        {/* Founder Section */}
+        {/* Founder Section - 12-Column Grid on Tablet for precise control */}
         <Reveal>
-          <div className="mb-40 py-20 border-y border-white/5 relative">
+          <div className="mb-40 py-16 md:py-20 border-y border-white/5 relative">
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 blur-[100px] pointer-events-none"></div>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              <div className="lg:col-span-5 relative">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
+              <div className="md:col-span-5 relative">
                 <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 overflow-hidden shadow-2xl relative group">
-                  {/* Founder Image */}
                   <img 
                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1000" 
                     alt="Krishna Patel"
@@ -152,18 +150,18 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                  <div className="absolute bottom-8 left-8">
-                    <h3 className="text-2xl font-medium text-white">Krishna Patel</h3>
-                    <p className="text-blue-400 font-mono text-xs uppercase tracking-widest mt-1">Founder & Chief Architect</p>
+                  <div className="absolute bottom-6 md:bottom-8 left-6 md:left-8">
+                    <h3 className="text-xl md:text-2xl font-medium text-white">Krishna Patel</h3>
+                    <p className="text-blue-400 font-mono text-[10px] uppercase tracking-widest mt-1">Founder & Chief Architect</p>
                   </div>
                 </div>
               </div>
-              <div className="lg:col-span-7">
+              <div className="md:col-span-7">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/20 bg-blue-500/5 text-[10px] font-mono uppercase tracking-widest mb-6 text-blue-400">
                   Leadership
                 </div>
-                <h2 className="text-4xl font-medium font-serif text-white mb-8">The Visionary Behind <br/><span className="italic text-blue-400">Autonexgen</span></h2>
-                <div className="space-y-6 text-slate-400 text-lg leading-relaxed font-light">
+                <h2 className="text-3xl md:text-4xl font-medium font-serif text-white mb-6 md:mb-8">The Visionary Behind <br/><span className="italic text-blue-400">Autonexgen</span></h2>
+                <div className="space-y-6 text-slate-400 text-base md:text-lg leading-relaxed font-light">
                   <p>
                     Krishna Patel established Autonexgen in 2025 with a singular, ambitious goal: to transition the modern business from being "AI-aware" to "AI-native". With deep expertise in systems architecture and a passion for cognitive automation, Krishna leads our engineering efforts from our hub in Ahmedabad.
                   </p>
@@ -181,7 +179,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           </div>
         </Reveal>
 
-        {/* Core Philosophy Section with Enhanced Hover */}
+        {/* Core Philosophy Section */}
         <div className="mb-40">
           <Reveal>
             <div className="text-center mb-16">
@@ -192,20 +190,19 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 group/philosophy-grid">
             {values.map((value, i) => (
               <Reveal key={i} delay={i * 150} className="h-full">
-                <div className="p-10 rounded-3xl border border-white/5 bg-white/[0.01] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group/value-card group-hover/philosophy-grid:opacity-40 group-hover/philosophy-grid:scale-[0.98] group-hover/philosophy-grid:blur-[0.5px] hover:!opacity-100 hover:!scale-[1.03] hover:!blur-0 hover:z-20 hover:border-blue-500/30 hover:bg-white/[0.04] hover:shadow-[0_20px_60px_-15px_rgba(37,99,235,0.15)] h-full flex flex-col relative overflow-hidden">
+                <div className="p-8 md:p-10 rounded-3xl border border-white/5 bg-white/[0.01] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group/value-card group-hover/philosophy-grid:opacity-40 group-hover/philosophy-grid:scale-[0.98] group-hover/philosophy-grid:blur-[0.5px] hover:!opacity-100 hover:!scale-[1.03] hover:!blur-0 hover:z-20 hover:border-blue-500/30 hover:bg-white/[0.04] hover:shadow-[0_20px_60px_-15px_rgba(37,99,235,0.15)] h-full flex flex-col relative overflow-hidden">
                   
-                  {/* Subtle hover glow background */}
                   <div className="absolute -inset-20 bg-blue-500/0 group-hover/value-card:bg-blue-500/5 blur-[100px] transition-all duration-700 pointer-events-none"></div>
 
-                  <div className="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-8 border border-white/5 transition-all duration-500 group-hover/value-card:scale-110 group-hover/value-card:bg-blue-500/20 group-hover/value-card:border-blue-500/20 group-hover/value-card:shadow-[0_0_20px_rgba(37,99,235,0.2)]">
-                    <iconify-icon icon={value.icon} class="text-blue-400 text-3xl"></iconify-icon>
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 md:mb-8 border border-white/5 transition-all duration-500 group-hover/value-card:scale-110 group-hover/value-card:bg-blue-500/20 group-hover/value-card:border-blue-500/20 group-hover/value-card:shadow-[0_0_20px_rgba(37,99,235,0.2)]">
+                    <iconify-icon icon={value.icon} class="text-blue-400 text-2xl md:text-3xl"></iconify-icon>
                   </div>
 
-                  <h3 className="text-2xl font-medium text-white mb-4 transition-colors duration-500 group-hover/value-card:text-blue-300">
+                  <h3 className="text-xl md:text-2xl font-medium text-white mb-4 transition-colors duration-500 group-hover/value-card:text-blue-300">
                     {value.title}
                   </h3>
 
-                  <p className="text-slate-500 text-base leading-relaxed transition-colors duration-500 group-hover/value-card:text-slate-300 flex-grow font-light">
+                  <p className="text-slate-500 text-sm md:text-base leading-relaxed transition-colors duration-500 group-hover/value-card:text-slate-300 flex-grow font-light">
                     {value.description}
                   </p>
                 </div>
@@ -216,18 +213,18 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
 
         {/* Location Section */}
         <Reveal>
-          <div className="p-12 md:p-20 rounded-[3rem] border border-white/5 bg-gradient-to-br from-white/[0.02] to-transparent relative overflow-hidden group/location">
+          <div className="p-10 md:p-20 rounded-[2.5rem] md:rounded-[3rem] border border-white/5 bg-gradient-to-br from-white/[0.02] to-transparent relative overflow-hidden group/location">
             <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none group-hover/location:scale-110 transition-transform duration-1000">
-              <iconify-icon icon="lucide:map" class="text-[30rem] -mr-40 text-blue-500/20"></iconify-icon>
+              <iconify-icon icon="lucide:map" class="text-[25rem] md:text-[30rem] -mr-40 text-blue-500/20"></iconify-icon>
             </div>
             <div className="max-w-2xl relative z-10">
-              <h2 className="text-4xl font-serif text-white mb-6">Born in India, Deploying Worldwide.</h2>
-              <p className="text-slate-400 text-lg mb-8 leading-relaxed font-light">
+              <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">Born in India, Deploying Worldwide.</h2>
+              <p className="text-slate-400 text-base md:text-lg mb-8 leading-relaxed font-light">
                 Our engineering hub is located in the heart of Ahmedabad, Gujarat. This allows us to tap into world-class technical talent while maintaining a competitive edge in global markets.
               </p>
               <button 
                 onClick={() => onNavigate('contact')}
-                className="px-10 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-full shadow-lg shadow-blue-900/30 transition-all active:scale-[0.98]"
+                className="px-8 md:px-10 py-3.5 md:py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-full shadow-lg shadow-blue-900/30 transition-all active:scale-[0.98]"
               >
                 Contact Our Hub
               </button>

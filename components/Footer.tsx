@@ -3,7 +3,7 @@ import React from 'react';
 import Logo from './Logo';
 
 interface FooterProps {
-  onNavigate: (view: 'home' | 'services' | 'about' | 'contact' | 'careers' | 'blog' | 'privacy' | 'terms' | 'results', sectionId?: string) => void;
+  onNavigate: (view: 'home' | 'services' | 'about' | 'contact' | 'careers' | 'blog' | 'privacy' | 'terms' | 'results' | 'landing', sectionId?: string) => void;
 }
 
 const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
@@ -13,7 +13,6 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
     { name: 'linkedin', icon: 'lucide:linkedin', url: 'https://www.linkedin.com/company/autonexgen/' }
   ];
 
-  // Clean link class with zoom/scale effect, updated text color to #CCCCCC
   const linkClass = "text-sm text-[#CCCCCC] hover:text-white px-3 py-1.5 -mx-3 rounded-lg transition-all duration-300 hover:scale-105 hover:bg-white/5 active:scale-95 outline-none block w-fit";
 
   return (
@@ -77,6 +76,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <ul className="space-y-2">
               <li><button onClick={() => onNavigate('results')} className={linkClass}>Case Studies</button></li>
               <li><button onClick={() => onNavigate('blog')} className={linkClass}>Blog</button></li>
+              <li><button onClick={() => onNavigate('landing')} className={`${linkClass} text-blue-400 font-medium`}>Special Offer</button></li>
             </ul>
           </div>
 

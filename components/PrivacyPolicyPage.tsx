@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 
 interface PrivacyPolicyPageProps {
@@ -107,10 +106,10 @@ const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate }) => 
               If you have any questions about this privacy policy or our privacy practices, please contact our data protection officer.
             </p>
             <a 
-              href="mailto:privacy@autonexgen.com" 
+              href="mailto:contact@autonexgen.com" 
               className="px-8 py-3 bg-white/5 border border-white/10 rounded-full text-white text-sm font-medium hover:bg-blue-600 transition-all active:scale-95 inline-block"
             >
-              privacy@autonexgen.com
+              contact@autonexgen.com
             </a>
           </div>
         </Reveal>

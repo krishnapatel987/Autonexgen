@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import Background from './components/Background.tsx';
 import Navbar from './components/Navbar.tsx';
@@ -16,9 +17,9 @@ import PrivacyPolicyPage from './components/PrivacyPolicyPage.tsx';
 import TermsAndConditionsPage from './components/TermsAndConditionsPage.tsx';
 import ResultsPage from './components/ResultsPage.tsx';
 import ReviewPage from './components/ReviewPage.tsx';
+import LandingPage from './components/LandingPage.tsx';
 import { PROCESS_STEPS, FAQS } from './constants.ts';
-
-type AppView = 'home' | 'services' | 'about' | 'contact' | 'careers' | 'blog' | 'privacy' | 'terms' | 'results' | 'reviews';
+import { AppView } from './types.ts';
 
 const Reveal: React.FC<{ children: React.ReactNode, delay?: number, className?: string }> = ({ children, delay = 0, className = "" }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -61,21 +62,24 @@ const App: React.FC = () => {
   };
 
   const handleNavigate = (targetView: AppView, sectionId?: string) => {
+    if (!sectionId) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
     setView(targetView);
+    
     if (sectionId) {
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-      }, 50);
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 200);
     }
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [view]);
 
   const getStepColorClasses = (color: string) => {
@@ -111,7 +115,7 @@ const App: React.FC = () => {
   return (
     <div className="relative min-h-screen bg-[#020204]">
       <Background />
-      <Navbar onNavigate={handleNavigate as any} currentView={view as any} />
+      <Navbar onNavigate={handleNavigate} currentView={view} />
 
       {view === 'home' && (
         <>
@@ -216,23 +220,24 @@ const App: React.FC = () => {
         </>
       )}
 
-      {view === 'services' && <ServicesPage onNavigate={handleNavigate as any} />}
-      {view === 'about' && <AboutPage onNavigate={handleNavigate as any} />}
-      {view === 'contact' && <ContactPage onNavigate={handleNavigate as any} />}
-      {view === 'careers' && <CareersPage onNavigate={handleNavigate as any} />}
-      {view === 'blog' && <BlogPage onNavigate={handleNavigate as any} />}
-      {view === 'privacy' && <PrivacyPolicyPage onNavigate={handleNavigate as any} />}
-      {view === 'terms' && <TermsAndConditionsPage onNavigate={handleNavigate as any} />}
-      {view === 'results' && <ResultsPage onNavigate={handleNavigate as any} />}
-      {view === 'reviews' && <ReviewPage onNavigate={handleNavigate as any} />}
+      {view === 'landing' && <LandingPage onNavigate={handleNavigate} />}
+      {view === 'services' && <ServicesPage onNavigate={handleNavigate} />}
+      {view === 'about' && <AboutPage onNavigate={handleNavigate} />}
+      {view === 'contact' && <ContactPage onNavigate={handleNavigate} />}
+      {view === 'careers' && <CareersPage onNavigate={handleNavigate} />}
+      {view === 'blog' && <BlogPage onNavigate={handleNavigate} />}
+      {view === 'privacy' && <PrivacyPolicyPage onNavigate={handleNavigate} />}
+      {view === 'terms' && <TermsAndConditionsPage onNavigate={handleNavigate} />}
+      {view === 'results' && <ResultsPage onNavigate={handleNavigate} />}
+      {view === 'reviews' && <ReviewPage onNavigate={handleNavigate} />}
 
-      {view !== 'contact' && view !== 'careers' && view !== 'blog' && view !== 'privacy' && view !== 'terms' && view !== 'results' && view !== 'reviews' && (
+      {view !== 'contact' && view !== 'careers' && view !== 'blog' && view !== 'privacy' && view !== 'terms' && view !== 'results' && view !== 'reviews' && view !== 'landing' && (
         <>
           {view === 'home' && <Reveal><Testimonials /></Reveal>}
           <Reveal><ContactForm /></Reveal>
         </>
       )}
-      <Footer onNavigate={handleNavigate as any} />
+      <Footer onNavigate={handleNavigate} />
     </div>
   );
 };
